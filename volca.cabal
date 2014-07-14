@@ -1,0 +1,22 @@
+name:                tidal-volca
+version:             0.0.1
+synopsis:            volca stuff
+-- description:         
+homepage:            http://yaxu.org/tidal/
+license:             GPL-3
+author:              Alex McLean
+maintainer:          alex@slab.org
+Stability:           Experimental
+Copyright:           (c) Alex McLean 2014
+category:            Sound
+build-type:          Simple
+cabal-version:       >=1.4
+
+Description: Volca stuff
+
+library
+  Exposed-modules:     Volca.Beat
+                       Volca.Key
+  Other-modules:       Volca.Base
+
+  Build-depends: base < 5, hosc > 0.13, tidal

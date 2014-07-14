@@ -1,0 +1,12 @@
+
+import Volca.Key
+
+(note, [portamento, expression, voice, octave, detune, vcoegint, kcutoff, vcfegint, lforate, lfopitchint, lfocutoffint, attack, decay, sustain, dtime , dfeedback], keystop) <- keystart
+
+let sine128 = (+) <$> "0*256" <*> ((floor . (* 128)) <$> sine1 :: Pattern Int)
+
+note $ whenmod 64 16 (const $ slow 2 "[50 50 50] [50 48 48 ~]") $ slow 4 $ "[50 50] [~ 50 53 55] [48 [~ 48] ~ 48] [~ 46 46 48]"
+
+cutoff $ slow 32 $ (<$> (`div` 2)) <$> sine128
+
+keystop
